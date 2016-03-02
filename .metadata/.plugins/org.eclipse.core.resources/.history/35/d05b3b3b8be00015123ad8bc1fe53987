@@ -1,0 +1,75 @@
+package DList;
+
+public class DList<T> implements Deque<T> {
+
+	private DNode<T> head = null;
+	private DNode<T> tail = null;
+	private int size = 0 ;
+	
+	public DList(){
+		head = new DNode<T>(null,null, null);
+		tail = new DNode<T>(null,head,null);
+		head.setNext(tail);
+		size = 0 ;
+	}
+	
+	@Override
+	public void addFirst(T element) {
+		DNode<T> newNode = new DNode<>(element,null,head);
+		head.setPrev(newNode);
+		head = newNode;
+		size ++;
+	}
+
+	@Override
+	public void addLast(T element) {
+		DNode<T> newNode = new DNode<>(element,tail,null);
+		tail.setNext(newNode);
+		tail = newNode;
+		size++;
+	}
+
+	@Override
+	public T removeFirst() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T removeLast() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T first() {
+		return head.getNext().getElement();
+	}
+
+	@Override
+	public T last() {
+		return tail.getPrev().getElement();
+	}
+
+	@Override
+	public int getSize() {
+		
+		return size;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		
+		return (size ==0);
+	}
+	
+	public String toString(){
+		//if(isEmpty()) return null;
+		String result = "";
+		for(DNode<T> i = head; (i != null); i = i.getNext() ){
+			result += String.valueOf(i.getElement()) + " ";
+		}
+		return result;
+	}
+
+}

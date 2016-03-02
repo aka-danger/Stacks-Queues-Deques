@@ -2,54 +2,87 @@ package DList;
 
 public class DList<T> implements Deque<T> {
 
+	private DNode<T> head = null;
+	private DNode<T> tail = null;
+	private int size = 0 ;
 	
+	public DList(){
+		head = new DNode<T>(null,null, null);
+		tail = new DNode<T>(null,head,null);
+		head.setNext(tail);
+		size = 0 ;
+	}
 	
 	@Override
 	public void addFirst(T element) {
-		// TODO Auto-generated method stub
-		
+		addBetween(element, head, head.getNext());
+		size ++;
 	}
 
 	@Override
 	public void addLast(T element) {
-		// TODO Auto-generated method stub
-		
+		addBetween(element, tail.getPrev(), tail);
+		size++;
+	}
+	
+	private void addBetween(T element, DNode<T> prev, DNode<T> next){
+		DNode<T> newNode = new DNode<>(element,prev,next);
+		prev.setNext(newNode);
+		next.setPrev(newNode);
+	}
+	
+	private T remove(DNode<T> node){
+		DNode<T> prev = node.getPrev();
+		DNode<T> next = node.getNext();
+		prev.setNext(next);
+		next.setPrev(prev);
+		size--;
+		return node.getElement(); // returns node that was removed
 	}
 
 	@Override
 	public T removeFirst() {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) return null;
+		return remove(head.getNext());
 	}
 
 	@Override
 	public T removeLast() {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) return null;
+		return remove(head.getNext());
 	}
 
 	@Override
 	public T first() {
-		// TODO Auto-generated method stub
-		return null;
+		return head.getNext().getElement();
 	}
 
 	@Override
 	public T last() {
-		// TODO Auto-generated method stub
-		return null;
+		return tail.getPrev().getElement();
 	}
 
 	@Override
 	public int getSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return size;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return (size ==0);
+	}
+	
+	public String toString(){
+		String result = "";
+		DNode<T> i = head.getNext();
+		
+		while(i != tail){
+			result += String.valueOf(i.getElement()) + " ";
+			i = i.getNext();
+		}	
+		return result;
 	}
 
 }
