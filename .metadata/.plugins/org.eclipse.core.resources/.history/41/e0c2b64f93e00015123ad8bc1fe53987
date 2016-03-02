@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+import DList.DList;
+
+
+public class Main {
+	
+	static String [] array = {"huh...", "what bitch?", "dafaq you talking bout", "get the fuk out of here","i cant understand fuckboi","ill slap u bitch",
+			"dirty hoe fucking talking shit", "hey poes what u saying", };
+	
+	private static void print(Object string){
+		System.out.println(string);
+	}
+	
+	private static String input(String print){
+		Scanner in = new Scanner(System.in);
+		print(print);
+		String value = in.nextLine();
+		in.close();
+		return value;
+	}
+	
+	
+	public static void deque(){
+		boolean running = true;
+		
+		Scanner in = new Scanner(System.in);
+		String unknown = array[Tools.randomInt(0, 7)];
+		
+		while(running){
+			String line = in.nextLine();
+			switch(line){
+				case "END":
+					print("ending...");
+					running = false;
+					in.close();
+					break;
+					
+				default:
+					print(unknown);
+					
+					break;
+				
+			}
+			
+		}
+		in.close();
+	}
+	
+	
+	public static void main(String [] args){
+		deque();
+	}
+}

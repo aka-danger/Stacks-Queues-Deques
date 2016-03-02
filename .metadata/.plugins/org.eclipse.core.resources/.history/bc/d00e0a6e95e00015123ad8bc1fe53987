@@ -38,7 +38,7 @@ public class Main {
 			StringTokenizer line = new StringTokenizer(in.nextLine());
 			String command = line.nextToken();
 			
-			switch(command.toUpperCase()){
+			switch(command){
 				case "END":
 					print("ending...");
 					in.close();

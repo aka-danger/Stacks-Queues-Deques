@@ -38,7 +38,8 @@ public class Main {
 			StringTokenizer line = new StringTokenizer(in.nextLine());
 			String command = line.nextToken();
 			
-			switch(command.toUpperCase()){
+			switch(command){
+				
 				case "END":
 					print("ending...");
 					in.close();
@@ -55,28 +56,12 @@ public class Main {
 					print(list.toString());
 					break;}
 				case "REMOVELAST":{
-					print(list.removeLast());
+					print("which element?")
+					int value = Integer.parseInt(in.nextInt());
+					list.addLast(value);
 					print(list.toString());
 					break;
 				}
-				case "REMOVEFIRST":{
-					print(list.removeFirst());
-					print(list.toString());
-					break;
-				}
-				case "GETFIRST":{
-					print("firs element:");
-					print(list.first());
-					print(list.toString());
-					break;
-				}
-				case "GETLAST":{
-					print("last element:");
-					print(list.last());
-					print(list.toString());
-					break;
-				}
-				
 				default:
 					print(unknown);
 					

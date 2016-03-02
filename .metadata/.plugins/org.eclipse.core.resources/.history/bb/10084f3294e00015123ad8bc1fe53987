@@ -13,9 +13,6 @@ public class Main {
 		System.out.println(string);
 	}
 	
-	static DList<Integer> list = new DList<Integer>();
-	
-	
 	private static String input(String print){
 		Scanner in = new Scanner(System.in);
 		print(print);
@@ -38,45 +35,15 @@ public class Main {
 			StringTokenizer line = new StringTokenizer(in.nextLine());
 			String command = line.nextToken();
 			
-			switch(command.toUpperCase()){
+			switch(command){
+				
 				case "END":
 					print("ending...");
 					in.close();
 					running = false;
 					break;
-				case "ADDLAST":{
-					Integer value = Integer.parseInt(line.nextToken());
-					list.addLast(value);
-					print(list.toString());
-					break;}
-				case "ADDFIRST":{
-					Integer value = Integer.parseInt(line.nextToken());
-					list.addFirst(value);
-					print(list.toString());
-					break;}
-				case "REMOVELAST":{
-					print(list.removeLast());
-					print(list.toString());
-					break;
-				}
-				case "REMOVEFIRST":{
-					print(list.removeFirst());
-					print(list.toString());
-					break;
-				}
-				case "GETFIRST":{
-					print("firs element:");
-					print(list.first());
-					print(list.toString());
-					break;
-				}
-				case "GETLAST":{
-					print("last element:");
-					print(list.last());
-					print(list.toString());
-					break;
-				}
-				
+				case "ADDLAST":
+					print
 				default:
 					print(unknown);
 					
