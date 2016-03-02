@@ -1,2 +1,1 @@
 INDEX VERSION 1.127+C:\Users\Brendon\Documents\GitHub\Stacks-Queues-Deques\.metadata\.plugins\org.eclipse.jdt.core
-4245771339.index
