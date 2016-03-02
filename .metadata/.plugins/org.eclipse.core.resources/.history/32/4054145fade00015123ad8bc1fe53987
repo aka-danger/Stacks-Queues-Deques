@@ -1,0 +1,52 @@
+package SList;
+
+public class SList<T> implements ISList<T> {
+
+	private Node<T> head = null ;
+	private Node<T> tail = null;
+	private int size = 0;
+	
+	public SList(){
+	
+	}
+	
+	
+
+	
+	@Override
+	//add last
+	public void push(T element) {
+		if(isEmpty())
+			head = new Node<T>(element, tail);
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public T pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T top() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return size;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return (size == 0);
+	}
+
+}

@@ -84,17 +84,21 @@ public class Main {
 		in.close();
 	}
 	
+	
+	
 	public static void stack(){
 		boolean running = true;
 		Scanner in = new Scanner(System.in);
-		print("#Stack#");
-		print("end - end program");
-		print("push- add value [CMD][VALUE]");
-		print("pop - remove top value and print");
-		print("peek - look at top value");
+		
+		
+		
 		while(running){
 			String unknown = array[Tools.randomInt(0, 7)];
-			
+			print("#Stack#");
+			print("end - end program");
+			print("push- add value [CMD][VALUE]");
+			print("pop - remove top value and print");
+			print("peek - look at top value");
 			print("----------------------------------");
 			print("enter command:");
 			
@@ -121,57 +125,6 @@ public class Main {
 				case "PEEK" :{
 					print(list2.top());
 					print(list2.toString());
-					break;
-				}
-				
-				default:
-					print(unknown);
-					
-					break;
-			}
-		}
-		in.close();
-	}
-	
-	public static void que(){
-		
-	}
-	
-	public static void options(){
-		boolean running = true;
-		Scanner in = new Scanner(System.in);
-		print("#Options#");
-		print("1) Stack");
-		print("2) que");
-		print("3) deque");
-		print("0) exit");
-		while(running){
-			String unknown = array[Tools.randomInt(0, 7)];
-			
-			print("----------------------------------");
-			print("enter command:");
-			
-			StringTokenizer line = new StringTokenizer(in.nextLine());
-			int value = Integer.parseInt(line.nextToken());
-			
-			switch(value){
-				case 0:
-					print("ending...");
-					in.close();
-					running = false;
-					break;
-				case 1:{
-					stack();
-					break;
-				}
-				case 2:{
-					print("nothin found");
-					
-					break;
-				}
-				case 3 :{
-					deque();
-					break;
 				}
 				
 				default:
@@ -184,6 +137,6 @@ public class Main {
 	}
 	
 	public static void main(String [] args){
-		options();
+		stack();
 	}
 }

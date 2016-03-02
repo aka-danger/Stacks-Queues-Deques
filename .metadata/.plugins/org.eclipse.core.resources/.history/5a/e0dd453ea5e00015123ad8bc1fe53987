@@ -1,0 +1,5 @@
+package SList;
+
+public interface ISList {
+
+}

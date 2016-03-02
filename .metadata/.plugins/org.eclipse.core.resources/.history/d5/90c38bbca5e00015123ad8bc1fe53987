@@ -1,0 +1,9 @@
+package SList;
+
+public interface ISList<T>{
+	
+	public void push();//add to last
+	public T pop();//remove last
+	public T top();
+	
+}

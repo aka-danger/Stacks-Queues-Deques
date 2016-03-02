@@ -87,14 +87,13 @@ public class Main {
 	public static void stack(){
 		boolean running = true;
 		Scanner in = new Scanner(System.in);
-		print("#Stack#");
-		print("end - end program");
-		print("push- add value [CMD][VALUE]");
-		print("pop - remove top value and print");
-		print("peek - look at top value");
 		while(running){
 			String unknown = array[Tools.randomInt(0, 7)];
-			
+			print("#Stack#");
+			print("end - end program");
+			print("push- add value [CMD][VALUE]");
+			print("pop - remove top value and print");
+			print("peek - look at top value");
 			print("----------------------------------");
 			print("enter command:");
 			
@@ -140,14 +139,13 @@ public class Main {
 	public static void options(){
 		boolean running = true;
 		Scanner in = new Scanner(System.in);
-		print("#Options#");
-		print("1) Stack");
-		print("2) que");
-		print("3) deque");
-		print("0) exit");
 		while(running){
 			String unknown = array[Tools.randomInt(0, 7)];
-			
+			print("#Options#");
+			print("1) Stack");
+			print("2) que");
+			print("3) deque");
+			print("0) exit");
 			print("----------------------------------");
 			print("enter command:");
 			
